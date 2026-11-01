@@ -66,6 +66,7 @@ Organize the calculations into functions.
 Use Git to commit the finished work.
 Pass condition */
 
+
 const medicines = [
   { name: "Panadol", price: 50, quantity: 10 },
   { name: "Augmentin", price: 120, quantity: 5 },
@@ -80,12 +81,26 @@ console.log(namesAlph);
 let namesInStock = medicines.filter(medicine => medicine.quantity > 0).map(medicine => medicine.name).sort();
 console.log(namesInStock);
 
-let totalUnitInStock = medicines.reduce((total, medicine) => total + medicine.quantity,0);
-console.log(totalUnitInStock);
+let totalUnitsInStock = medicines.reduce((total, medicine) => total + medicine.quantity, 0);
+console.log(totalUnitsInStock);
 
 let totalInventoryValue = medicines.reduce((total, medicine) => total + medicine.price * medicine.quantity, 0);
 console.log(totalInventoryValue);
 
 let mostExpMed = () => medicines.reduce((max, medicine) => medicine.price > max.price ? medicine : max);
 console.log(mostExpMed());
+
+let medfewerThan5 = medicines.filter(medicine => medicine.quantity < 5).map(medicine => medicine.name).sort();
+console.log(medfewerThan5);
+
+let summary = () => {
+  console.log("Medicine Names:", namesAlph);
+  console.log("Medicines in Stock:", namesInStock);
+  console.log("Total Units in Stock:", totalUnitsInStock);
+  console.log("Total Inventory Value: $", totalInventoryValue);
+  console.log("Most Expensive Medicine:", mostExpMed().name, "at $", mostExpMed().price);
+  console.log("Medicines with Fewer than 5 Units:", medfewerThan5);
+}
+summary();  
+
 
