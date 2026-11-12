@@ -43,3 +43,9 @@ else {
     console.log('The medicine is not expired.');
 };
 
+let totalPrice: number = 4 * unitePrices;
+console.log('Total Price for 4 Packs: ' + totalPrice);
+
+let patientMidName: string | null = null;
+console.log('patient middle name: ' + (patientMidName ?? 'No middle name'));
+
