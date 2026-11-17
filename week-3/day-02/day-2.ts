@@ -47,3 +47,32 @@ function totalSalesEntries (sales: number[][]): number {
     //}
 }
 
+let sales = [
+{ medicine: "Panadol", price: 50, quantity: 3 },
+{ medicine: "Augmentin", price: 120, quantity: 2 },
+{ medicine: "Panadol", price: 50, quantity: 5 },
+{ medicine: "Cataflam", price: 80, quantity: 1 }
+];
+
+function getTotalRevenue(sales: {price: number, quantity: number}[]): number {
+    return sales.reduce((total,sales) => total + (sales.price * sales.quantity), 0);
+}
+
+function getTotalUnits(sales: {quantity: number}[]): number {
+    return sales.reduce((total, sales) => total + sales.quantity, 0);
+}
+
+function getSaleValue(price: number, quantity: number): number {
+    return price * quantity;
+}
+
+function getSalesAboveQuantity(sales: {quantity: number}[], limit: number): {quantity: number}[] {
+    return sales.filter(sales => sales.quantity > limit);
+}
+
+function getMedicineName(sales: {medicine: string}[]): string[] {
+    return sales.map (sales => sales.medicine);
+}
+
+
+
